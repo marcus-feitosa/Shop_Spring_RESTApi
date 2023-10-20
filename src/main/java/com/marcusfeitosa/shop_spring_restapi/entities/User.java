@@ -6,6 +6,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,7 +17,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_user")
-public class User  {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,4 +26,6 @@ public class User  {
     private String email;
     private String phone;
     private String password;
+
+    private List<Order> orders = new ArrayList<>();
 }
